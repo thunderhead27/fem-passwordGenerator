@@ -10,7 +10,17 @@ function Strength({ checkedState }) {
 
   return (
     <div>
-      {strNumber === 0 || strNumber === 1 ? (
+      {strNumber === 0 ? (
+        <div tw="flex flex-row items-center space-x-3">
+          <span tw="text-cWhite text-2xl">{message}</span>
+          <div tw="flex flex-row space-x-2">
+            <div tw="h-[28px] w-[10px] border-2 border-cWhite"></div>
+            <div tw="h-[28px] w-[10px] border-2 border-cWhite"></div>
+            <div tw="h-[28px] w-[10px] border-2 border-cWhite"></div>
+            <div tw="h-[28px] w-[10px] border-2 border-cWhite"></div>
+          </div>
+        </div>
+      ) : strNumber === 1 ? (
         <div tw="flex flex-row items-center space-x-3">
           <span tw="text-cWhite text-2xl">{message}</span>
           <div tw="flex flex-row space-x-2">
@@ -104,7 +114,7 @@ export default function PasswordGen() {
 
   return (
     <div tw="flex flex-col items-center w-[340px] h-[540px] sm:w-[540px] sm:h-[695px] bg-vdGrey space-y-6">
-      <h2 tw="text-base text-cGrey sm:text-2xl">Password Generator</h2>
+      <h1 tw="text-base text-cGrey sm:text-2xl">Password Generator</h1>
       {/* Results container */}
       <div tw="flex flex-row items-center justify-between h-16 sm:h-[80px] w-full bg-dGrey px-6">
         <span tw="text-2xl text-cWhite">{password}</span>
