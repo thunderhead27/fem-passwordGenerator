@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import tw from 'twin.macro'
+import tw, { styled } from 'twin.macro'
 import Slider from './slider'
 
 function Strength({ checkedState }) {
@@ -112,12 +112,17 @@ export default function PasswordGen() {
     setPassword(generatedPassword)
   }
 
+  const Password = styled.span(() => [
+    tw`text-2xl text-cGrey`,
+    password && tw`text-2xl text-cWhite`,
+  ])
+
   return (
     <div tw="flex flex-col items-center w-[340px] h-[540px] sm:w-[540px] sm:h-[695px] bg-vdGrey space-y-6">
       <h1 tw="text-base text-cGrey sm:text-2xl">Password Generator</h1>
       {/* Results container */}
       <div tw="flex flex-row items-center justify-between h-16 sm:h-[80px] w-full bg-dGrey px-6">
-        <span tw="text-2xl text-cWhite">{password}</span>
+        <Password>{password ? password : 'P4$5W0rD!'}</Password>
         <button tw="" onClick={() => navigator.clipboard.writeText(password)}>
           <img src="/images/icon-copy.svg" alt="clipboard" />
         </button>
