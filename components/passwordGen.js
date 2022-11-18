@@ -108,7 +108,12 @@ export default function PasswordGen() {
       {/* Results container */}
       <div tw="flex flex-row items-center justify-between h-16 sm:h-[80px] w-full bg-dGrey px-6">
         <span tw="text-2xl text-cWhite">{password}</span>
-        <button tw="">
+        <button
+          tw=""
+          onClick={() =>
+            navigator.clipboard.writeText('Copy password to clipboard')
+          }
+        >
           <img src="/images/icon-copy.svg" alt="clipboard" />
         </button>
       </div>
