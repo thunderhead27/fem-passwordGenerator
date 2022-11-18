@@ -3,7 +3,7 @@ import tw, { styled } from 'twin.macro'
 import Slider from './slider'
 
 function Strength({ checkedState }) {
-  const strArr = ['TOO WEAK!', 'TOO WEAK!', 'WEAK', 'MEDIUM', 'STRONG']
+  const strArr = ['', 'TOO WEAK!', 'WEAK', 'MEDIUM', 'STRONG']
   const strNumber = checkedState.filter(item => item === true).length
 
   const message = strArr[strNumber]
